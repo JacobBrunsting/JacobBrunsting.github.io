@@ -66,9 +66,8 @@ function clipBannerImage() {
 }
 
 function onWindowResize() {
-    width = window.innerWidth;
-    maxWidth = window.maxWidth;
-    if (width <= WIDTH_AT_MOBILE_MODE || maxWidth <= WIDTH_AT_MOBILE_MODE) {
+    if (window.matchMedia("(min-width: " + WIDTH_AT_MOBILE_MODE + "px)") ||
+        window.matchMedia("(min-device-width: " + WIDTH_AT_MOBILE_MODE + "px)")) {
         if (!inMobileMode) {
             setMobileModeEnabled(true);
         }
@@ -81,24 +80,7 @@ function setMobileModeEnabled(enabled) {
     var name = document.getElementsByClassName("name_header")[0];
     var prev = inMobileMode;
     inMobileMode = enabled;
-    
     return;
-    /*
-    if (inMobileMode) {
-        name.style.display = "none";
-        if (!prev) {
-            fadeTitleBar(FADE_IN_ACTION, false);
-        }
-    } else {
-        name.style.display = "initial";
-        if (prev) {
-            if (document.body.scrollTop < SCROLL_AT_TITLEBAR_FADE) {
-                fadeTitleBar(FADE_OUT_ACTION, false);
-                lastScrollPos = document.body.scrollTop;
-            }
-            clipBannerImage();
-        }
-    }*/
 }
 
 window.addEventListener("scroll", function() {refreshNavbarState()});
