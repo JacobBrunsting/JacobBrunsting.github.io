@@ -7,36 +7,43 @@ const NAVBAR_TARGET_OPACITY = 0.8;
 const FADE_IN_ACTION = 1;
 const FADE_OUT_ACTION = -1;
 const BANNER_INITIAL_HEIGHT_CLIP = 225;
-const WIDTH_AT_MOBILE_MODE = 600;
+const WIDTH_AT_MOBILE_MODE = 800;
+const NAVBAR_FONT_SIZE = "20px";
+const NAVBAR_MOBILE_FONT_SIZE = "30px";
 
 var lastScrollPos = 0;
 var lastFadeAction = 0;
 var inMobileMode = false;
 
-function onScroll() {
+function refreshNavbarState() {
+    // in mobile mode, we want the title bar to always be faded in
+    if (inMobileMode) {
+        return;
+    }
+    
     if (document.body.scrollTop > SCROLL_AT_TITLEBAR_FADE) {
         if (lastScrollPos <= SCROLL_AT_TITLEBAR_FADE) {
-            fadeTitleBar(FADE_IN_ACTION);
+            fadeTitleBar(FADE_IN_ACTION, true);
         }
     } else if (lastScrollPos > SCROLL_AT_TITLEBAR_FADE) {
-        fadeTitleBar(FADE_OUT_ACTION)
+        fadeTitleBar(FADE_OUT_ACTION, true)
     }
     
     lastScrollPos = document.body.scrollTop;
     clipBannerImage();
 }
 
-function fadeTitleBar(fadeAction) {
+function fadeTitleBar(fadeAction, animateFade) {
     lastFadeAction = fadeAction;
     var navbar = document.getElementsByClassName("navbar")[0];
     var id = setInterval(animate, 16)
     var targetFrames = Math.round(TITLEBAR_FADE_LENGTH / 16.0);
     var framesComplete = 0;
-    
+
     function animate() {
         percentToFull = framesComplete / targetFrames;
-        
-        if (framesComplete >= targetFrames || lastFadeAction != fadeAction) {
+
+        if (!animateFade || framesComplete >= targetFrames || lastFadeAction != fadeAction) {
             clearInterval(id);
             percentToFull = 1;
         }
@@ -60,7 +67,7 @@ function clipBannerImage() {
 
 function onWindowResize() {
     width = window.innerWidth;
-    if (width < WIDTH_AT_MOBILE_MODE) {
+    if (width <= WIDTH_AT_MOBILE_MODE) {
         if (!inMobileMode) {
             setMobileModeEnabled(true);
         }
@@ -70,17 +77,30 @@ function onWindowResize() {
 }
 
 function setMobileModeEnabled(enabled) {
-    inMobileMode = enabled;
     var name = document.getElementsByClassName("name_header")[0];
+    var prev = inMobileMode;
+    inMobileMode = enabled;
     
-    if (enabled) {
+    return;
+    /*
+    if (inMobileMode) {
         name.style.display = "none";
+        if (!prev) {
+            fadeTitleBar(FADE_IN_ACTION, false);
+        }
     } else {
         name.style.display = "initial";
-    }
+        if (prev) {
+            if (document.body.scrollTop < SCROLL_AT_TITLEBAR_FADE) {
+                fadeTitleBar(FADE_OUT_ACTION, false);
+                lastScrollPos = document.body.scrollTop;
+            }
+            clipBannerImage();
+        }
+    }*/
 }
 
-window.addEventListener("scroll", function() {onScroll()});
+window.addEventListener("scroll", function() {refreshNavbarState()});
 window.addEventListener("resize", onWindowResize);
 onWindowResize();
-onScroll();
+refreshNavbarState();

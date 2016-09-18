@@ -2,7 +2,7 @@
     http://paletton.com/#uid=62T0E0keqNw3ZZz9uUEiKEmmBvn 
 */
 
-ul.navbar {
+.navbar {
     list-style-type: none;
     display: block;
     margin: auto;
@@ -25,16 +25,17 @@ ul.navbar {
        to 0 after the user scrolls down a certain
        distance */
     margin-top: 10px;
+    font-size: 20px;
 }
 
-ul.navbar > li {
+.navbar > li {
     width: auto;
     display: inline-block;
     text-align: center;
     float: right;
 }
 
-ul.navbar > li.name_header {
+.navbar > li.name_header {
     float: left;
     margin: 5px;
     margin-top: 2px;
@@ -43,17 +44,17 @@ ul.navbar > li.name_header {
     font-weight: 900;
 }
 
-ul.navbar > li:nth-child(2) {
+.navbar > li:nth-child(2) {
     margin-right: 40px;
 }
 
-ul.navbar > li:first-child {
+.navbar > li:first-child {
     /* The opacity will be increased after scrolling */
     color: rgb(80, 80, 80);
     opacity: 0;
 }
 
-ul.navbar > li > a {
+.navbar > li > a {
     display: block;
     color: rgb(80, 80, 80);
     background-color: rgba(200, 200, 200);
@@ -66,7 +67,7 @@ ul.navbar > li > a {
     align-content: center;
 }
 
-ul.navbar > li > a:hover {
+.navbar > li > a:hover {
     color: rgb(200, 200, 200);
     background-color: rgb(150, 150, 150);
 }
@@ -91,7 +92,7 @@ ul.navbar > li > a:hover {
     line-height: 70px;
 }
 
-ul.navbar > li.selected > a {
+.navbar > li.selected > a {
     background: rgb(255, 120, 106);
     color: rgb(80, 80, 80);
 }
@@ -142,6 +143,7 @@ div.section {
 
 body {
     font-family: "Roboto", sans-serif;
+    font-size: 18px;
     background-color: rgb(240, 240, 240);
 }
 
@@ -153,4 +155,56 @@ html {
 a {
     text-decoration: none;
     color: rgb(86, 145, 191);
+}
+
+@media all and (max-width: 800px) {
+    div.banner {
+        display: none;
+    }
+    
+    div.main {
+        padding-top: 20px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    
+    .navbar > li > a {
+        height: 38px;
+    }
+    
+    .navbar {
+        border-width: 2px;
+        background-color: rgb(200, 200, 200);
+        margin-top: 0px;
+        font-size: 30px;
+        height: 200px;
+        white-space: nowrap;
+        margin: 0px;
+        position: relative;
+        padding: 0px;
+    }
+    
+    .navbar > li {
+        display: inline;
+        float: none;
+    }
+    
+    .navbar > li:first-child {
+        opacity: 0;
+        display: none;
+    }
+    
+    .navbar > li:nth-child(2) {
+        margin-right: 0px;
+    }
+    
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+    }
+    
+    html {
+        padding-top: 0px;
+    }
 }
