@@ -85,3 +85,18 @@ p {
     margin-right: 10px;
     margin-bottom: 10px;
 }
+
+@media all and (max-width: 800px) , all and (max-device-width: 800px) {
+    div.hover_image_wrapper {
+        width: 44%;
+        margin: 2%;
+    }
+    
+    div.hover_image_wrapper:hover > p.hover_text {
+        font-size: 30px;
+    }
+    
+    .desktop_specific {
+        display: none;
+    }
+}
