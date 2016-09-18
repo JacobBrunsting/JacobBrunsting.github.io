@@ -2,9 +2,7 @@
 @import url("table_style.css");
 
 table {
-    width: 804px;
-    margin-left: -2px;
-    margin-top: -2px;
+    width: 100%;
     margin-bottom: 10px;
 }
 
@@ -12,9 +10,10 @@ div.section.first {
     margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
-    width: 800px;
-    height: 730px;
+    max-width: 1200px;
     padding: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 div.main {
@@ -22,6 +21,26 @@ div.main {
 }
 
 html, body {
-    width: 100%;
+    width: 99%;
     align-content: center;
+}
+
+@media all and (max-width: 800px) {    
+    div.main {
+        padding: 0px;
+    }
+    
+    th {
+        break-inside: avoid;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    
+    div.cell_wrapper {
+        display: inline-block;
+    }
+    
+    div.arrows {
+        display: inline-block;
+    }
 }

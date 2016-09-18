@@ -33,10 +33,22 @@ div.cell_wrapper {
     position: relative;
 }
 
+div.header_wrapper > div.cell_wrapper {
+    display: inline-block;
+}
+
 div.arrows {
+    display: inline-block;
     position: relative;
     height: 0px;
+    top: 10px;
     cursor: default;
+}
+
+th {
+    break-inside: avoid;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 p.top_arrow {
@@ -46,7 +58,7 @@ p.top_arrow {
 }
 
 p.bottom_arrow {
-    height: 0px;
+    margin: 0px;
     color: rgb(245, 245, 245);
 }
 
