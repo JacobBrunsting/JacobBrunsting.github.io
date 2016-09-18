@@ -2,7 +2,14 @@ const ROW_ANIMATION_DURATION = 250;
 const ANIMATION_ACCELERATION_EXPONENT = 1 / 2;
 const ANIMATION_EQUATION_DENOMINATOR = 2 * Math.pow(0.5, ANIMATION_ACCELERATION_EXPONENT);
 
+var currentlyAnimating = false;
+
 function invertHeaderSorting(header, animate) {
+    if (currentlyAnimating) {
+        return;
+    }
+    currentlyAnimating = true;
+    
     var table = document.getElementById("transcript").children[0];
     var rows = [];
     const numLoops = table.children.length - 1;
@@ -61,15 +68,23 @@ function invertHeaderSorting(header, animate) {
         var posChange = i - originalPositions[i];
         var rowShiftAmount = -posChange * row.offsetHeight;
         
-        for (var n = 0; n < 3; n++) {
-            if (animate) {
-                animatePosChange(rowShiftAmount,   row.children[n].children[0]);
+        if (animate) {
+            for (var n = 0; n < 3; n++) {
+                var callback = null;
+                if (n == 0) {
+                    callback = function() {
+                        currentlyAnimating = false;
+                    }
+                }
+                animatePosChange(rowShiftAmount, row.children[n].children[0], callback);
             }
+        } else {
+            currentlyAnimating = false;
         }
     }
 }
 
-function animatePosChange(yChange, element) {
+function animatePosChange(yChange, element, onComplete) {
     var id = setInterval(animate, 16)
     var frameCount = Math.round(ROW_ANIMATION_DURATION / 16.0);
     var framesComplete = 0;
@@ -80,6 +95,9 @@ function animatePosChange(yChange, element) {
         var offset;
         if (framesComplete >= frameCount) {
             clearInterval(id);
+            if (onComplete) {
+                onComplete();
+            }
             offset = 0;
         } else {
             var percentDone = framesComplete / frameCount;
