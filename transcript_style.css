@@ -28,7 +28,7 @@ html, body {
     overflow-x: hidden;
 }
 
-@media all and (max-width: 800px) {    
+@media all and (max-width: 800px) , all and (max-device-width: 800px) {    
     div.main {
         padding: 0px;
     }

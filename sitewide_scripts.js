@@ -67,7 +67,8 @@ function clipBannerImage() {
 
 function onWindowResize() {
     width = window.innerWidth;
-    if (width <= WIDTH_AT_MOBILE_MODE) {
+    maxWidth = window.maxWidth;
+    if (width <= WIDTH_AT_MOBILE_MODE || maxWidth <= WIDTH_AT_MOBILE_MODE) {
         if (!inMobileMode) {
             setMobileModeEnabled(true);
         }
