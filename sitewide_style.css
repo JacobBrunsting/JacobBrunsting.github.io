@@ -119,18 +119,18 @@ div.main {
     background-color: rgb(255, 255, 255);
     color: rgb(80, 80, 80);
     max-width: 1200px;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 40px;
-    padding-top: 20px;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-bottom: 4%;
+    padding-top: 2%;
     margin: auto;
     margin-bottom: 100px;
-    margin-top: 20px;
+    margin-top: 2%;
 }
 
 div.section {
-    padding-left: 35px;
-    padding-right: 35px;
+    padding-left: 8%;
+    padding-right: 8%;
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 2px;
