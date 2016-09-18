@@ -1,0 +1,59 @@
+table {
+    border-spacing: 0px;
+}
+
+th {
+    background-color: rgb(200, 200, 200);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+th:hover {
+    cursor: pointer;
+}
+
+th > div.cell_wrapper {
+    float: left;
+    padding-right: 0px;
+    cursor: pointer;
+}
+
+th > div.arrows {
+    float: right;
+    align-content: left;
+    width: 40px;
+    margin-top: 10px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+div.cell_wrapper {
+    padding: 20px;
+    position: relative;
+}
+
+div.arrows {
+    position: relative;
+    height: 0px;
+    cursor: default;
+}
+
+p.top_arrow {
+    margin-top: 0px;
+    height: 0px;
+    color: rgb(245, 245, 245);
+}
+
+p.bottom_arrow {
+    height: 0px;
+    color: rgb(245, 245, 245);
+}
+
+div.arrows.sorted_down > p.top_arrow {
+    color: rgb(255, 120, 106);
+}
+
+div.arrows.sorted_up > p.bottom_arrow {
+    color: rgb(255, 120, 106);
+}

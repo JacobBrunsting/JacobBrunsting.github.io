@@ -1,0 +1,87 @@
+@import url("sitewide_style.css");
+
+div.section {
+    margin-top: 20px;
+    padding: 20px;
+    padding-bottom: 20px;
+    break-inside: avoid;
+    display: block;
+}
+
+div.tiled_view_wrapper {
+    column-width: 500px;
+    column-gap: 20px;
+    margin-top: 20px;
+}
+
+div.tiled_view_wrapper > div.section:first-child {
+    margin-top: 0px;
+}
+
+img.profile_image {
+    height: 185px;
+    margin-top: 3px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    float: left;
+}
+
+img.qualifications_logo {
+    width: 100%;
+    vertical-align: top;
+}
+
+div.hover_image_wrapper {
+    display: inline-block;
+    position: relative;
+    width: 155px;
+    overflow: hidden;
+    margin: 10px;
+    vertical-align: top;
+}
+
+div.hover_image_wrapper:hover > p.hover_text {
+    visibility: visible;
+}
+
+p.hover_text {
+    padding: 5%;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    position: absolute;
+    display: block;
+    width: 90%;
+    height: 90%;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    color: rgb(80, 80, 80);
+    visibility: hidden;
+    cursor: default;
+}
+
+p {
+    margin: 0px;
+}
+
+.section_header, .subtitle {
+    margin: 0px;
+    margin-bottom: 0px;
+}
+
+.subtitle {
+    margin-top: 5px;
+    font-size: 16px;
+    color: rgb(120, 120, 120);
+}
+
+.simple_list {
+    font-size: 24px;
+    display: block;
+    margin-right: 5%;
+    width: 95%;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}

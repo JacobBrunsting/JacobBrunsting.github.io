@@ -1,0 +1,156 @@
+/* color scheme:
+    http://paletton.com/#uid=62T0E0keqNw3ZZz9uUEiKEmmBvn 
+*/
+
+ul.navbar {
+    list-style-type: none;
+    display: block;
+    margin: auto;
+    width: 100%;
+    background-color: aqua;
+    border-bottom-style: solid;
+    /* The outline width will be animated larger 
+       when the user scrolls */
+    border-bottom-width: 0px;
+    border-bottom-color: rgb(255, 120, 106);
+    /* The alpha will be increased after scrolling */
+    background-color: rgba(200, 200, 200, 0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-left: 10px;
+    z-index: 10;
+    height: 40px;
+    /* The top and margin will likely be animated
+       to 0 after the user scrolls down a certain
+       distance */
+    margin-top: 10px;
+}
+
+ul.navbar > li {
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    float: right;
+}
+
+ul.navbar > li.name_header {
+    float: left;
+    margin: 5px;
+    margin-top: 2px;
+    font-size: 200%;
+    font-variant: small-caps;
+    font-weight: 900;
+}
+
+ul.navbar > li:nth-child(2) {
+    margin-right: 40px;
+}
+
+ul.navbar > li:first-child {
+    /* The opacity will be increased after scrolling */
+    color: rgb(80, 80, 80);
+    opacity: 0;
+}
+
+ul.navbar > li > a {
+    display: block;
+    color: rgb(80, 80, 80);
+    background-color: rgba(200, 200, 200);
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 12px;
+    margin: 0px;
+    height: 28px;
+    align-content: center;
+}
+
+ul.navbar > li > a:hover {
+    color: rgb(200, 200, 200);
+    background-color: rgb(150, 150, 150);
+}
+
+.first_name {
+    width: 500px;
+    padding-left: 40px;
+    padding-top: 15px;
+    color: rgb(255, 120, 106);
+    font-size: 120px;
+    line-height: 120px;
+    margin: 0px;
+}
+
+.last_name {
+    width: 500px;
+    padding-left: 40px;
+    padding-bottom: 20px;
+    margin: 0px;
+    color: rgb(86, 145, 191);
+    font-size: 73px;
+    line-height: 70px;
+}
+
+ul.navbar > li.selected > a {
+    background: rgb(255, 120, 106);
+    color: rgb(80, 80, 80);
+}
+
+div.banner {
+    margin-top: -20px;
+    margin-right: -20px;
+    margin-left: -20px;
+    height: 225px;
+    width: 500px;
+    overflow: hidden;
+}
+
+div.banner > img {
+    position: fixed;
+    width: 100%;
+    min-width: 1000px;
+    margin-top: -230px;
+    z-index: -1;
+    clip: rect(0px, auto, 230px, 0px);
+}
+
+div.main {
+    background-color: rgb(255, 255, 255);
+    color: rgb(80, 80, 80);
+    max-width: 1200px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    padding-top: 20px;
+    margin: auto;
+    margin-bottom: 100px;
+    margin-top: 20px;
+}
+
+div.section {
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 2px;
+    border-style: solid;
+    border-width: 5px;
+    font-size: 125%;
+    background-color: rgb(245, 245, 245);
+    border-color: rgb(200, 200, 200);
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: rgb(240, 240, 240);
+}
+
+html {
+    overflow: -moz-scrollbars-vertical; 
+    overflow-y: scroll;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(86, 145, 191);
+}

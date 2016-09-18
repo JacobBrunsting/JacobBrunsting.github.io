@@ -1,0 +1,44 @@
+@import url("sitewide_style.css");
+
+div.section {
+    margin-top: 20px;
+    padding: 20px;
+    padding-bottom: 10px;
+    break-inside: avoid;
+    overflow: hidden;
+}
+
+img.work_logo, img.project_logo, img.award_logo {
+    float: left;
+    margin: 0px;
+    padding-right: 20px;
+    padding-left: 0px;
+    padding-bottom: 10px;
+    width: 200px;
+}
+
+img.project_logo {
+    width: 150px;
+}
+
+.section_title {
+    margin: 0px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    font-size: 30px;
+}
+
+.work_title, .award_title, .project_title, .programming_language {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+.subheading {
+    position: relative;
+    font-size: 20px;
+}
