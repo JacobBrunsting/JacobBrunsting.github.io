@@ -74,6 +74,7 @@ p {
     margin-top: 5px;
     font-size: 16px;
     color: rgb(120, 120, 120);
+    display: block;
 }
 
 .simple_list {
@@ -92,6 +93,13 @@ p {
         margin: 2%;
     }
     
+    p.hover_text {
+        /* when a mobile user clicks on the hover image, it is treated as a
+           hover, but the text below where the user clicked is selected, so we
+           disable text selection on mobile devices as a quick fix */
+        user-select: none;
+    }
+    
     div.hover_image_wrapper:hover > p.hover_text {
         font-size: 30px;
     }
@@ -99,4 +107,17 @@ p {
     .desktop_specific {
         display: none;
     }
+    
+    /* the links are hard to click on mobile, and can be triggered by clicking
+       the image in the place the link appears after clicking a hover image,
+       so we disable them. */
+    p.hover_text > a {
+        display: none;
+    }
+}
+
+@media not all , not (max-width: 800px) , not (max-device-width: 800px) {
+    .mobile_specific {
+    display: none;
+}
 }
