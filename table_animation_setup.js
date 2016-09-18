@@ -12,14 +12,16 @@ function invertHeaderSorting(header, animate) {
     
     var table = document.getElementById("transcript").children[0];
     var rows = [];
+    var rowHeights = [];
     const numLoops = table.children.length - 1;
     for (var i = 0; i < numLoops; i++) {
         rows[i] = table.children[i + 1];
+        rowHeights[i] = rows[i].offsetHeight;
     }
     
     var firstTableRow = table.firstChild;
     var tableHeaders = firstTableRow.children;
-    var selectedHeaderCell = tableHeaders[header];
+    var selectedHeaderCell = tableHeaders[header].children[0];
     var selectedHeaderCellArrows = selectedHeaderCell.children[1];
     
 
@@ -40,7 +42,7 @@ function invertHeaderSorting(header, animate) {
     
     for (var i = 0; i < tableHeaders.length; i++) {
         if (i != header) {
-            tableHeaders[i].children[1].className = "arrows neutral";
+            tableHeaders[i].children[0].children[1].className = "arrows neutral";
         }
     }
     
@@ -62,12 +64,19 @@ function invertHeaderSorting(header, animate) {
     }
 
     table.appendChild(firstTableRow);
+    
     for (var i = 0; i < rows.length; ++i) {
         const row = rows[originalPositions[i]];
         table.appendChild(row);
         var posChange = i - originalPositions[i];
-        var rowShiftAmount = -posChange * row.offsetHeight;
+        var rowShiftAmount = sum(rowHeights, i, originalPositions[i]);
         
+        if (rowShiftAmount > 0) {
+            rowShiftAmount -= rowHeights[i];
+        } else {
+            rowShiftAmount += rowHeights[i];
+        }
+                
         if (animate) {
             for (var n = 0; n < 3; n++) {
                 var callback = null;
@@ -82,6 +91,28 @@ function invertHeaderSorting(header, animate) {
             currentlyAnimating = false;
         }
     }
+}
+
+// returns the negative if firstindex is larger than last index
+function sum(list, firstIndex, lastIndex) {
+    var negate = false;
+    if (firstIndex > lastIndex) {
+        var temp = firstIndex;
+        firstIndex = lastIndex;
+        lastIndex = temp;
+        negate = true;
+    }
+    
+    var total = 0;
+    for (var i = firstIndex; i <= lastIndex; ++i) {
+        total += list[i];
+    }
+    
+    if (negate) {
+        total *= -1;
+    }
+    
+    return total;
 }
 
 function animatePosChange(yChange, element, onComplete) {

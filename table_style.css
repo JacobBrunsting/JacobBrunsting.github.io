@@ -16,7 +16,6 @@ th:hover {
 th > div.cell_wrapper {
     float: left;
     padding-right: 0px;
-    cursor: pointer;
 }
 
 th > div.arrows {
@@ -25,6 +24,9 @@ th > div.arrows {
     width: 40px;
     margin-top: 10px;
     line-height: 20px;
+}
+
+th > div.header_wrapper {
     cursor: pointer;
 }
 
@@ -42,7 +44,7 @@ div.arrows {
     position: relative;
     height: 0px;
     top: 10px;
-    cursor: default;
+    padding-right: 20px;
 }
 
 th {
