@@ -101,7 +101,7 @@ p {
     }
     
     div.hover_image_wrapper:hover > p.hover_text {
-        font-size: 30px;
+        font-size: 16px;
     }
     
     .desktop_specific {
@@ -116,8 +116,8 @@ p {
     }
 }
 
-@media not all , not (max-width: 800px) , not (max-device-width: 800px) {
+@media not all and (max-width: 800px) , all and (max-device-width: 800px) {
     .mobile_specific {
-    display: none;
-}
+        display: none;
+    }
 }

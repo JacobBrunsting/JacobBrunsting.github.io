@@ -66,8 +66,7 @@ function clipBannerImage() {
 }
 
 function onWindowResize() {
-    if (window.matchMedia("(min-width: " + WIDTH_AT_MOBILE_MODE + "px)") ||
-        window.matchMedia("(min-device-width: " + WIDTH_AT_MOBILE_MODE + "px)")) {
+    if (window.matchMedia("all and (max-width: 800px) , all and (max-device-width: 800px)").matches) {
         if (!inMobileMode) {
             setMobileModeEnabled(true);
         }
@@ -83,7 +82,7 @@ function setMobileModeEnabled(enabled) {
     return;
 }
 
-window.addEventListener("scroll", function() {refreshNavbarState()});
+window.addEventListener("scroll", function() {refreshNavbarState();});
 window.addEventListener("resize", onWindowResize);
 onWindowResize();
 refreshNavbarState();
