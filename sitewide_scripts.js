@@ -73,6 +73,41 @@ function onWindowResize() {
     } else if (inMobileMode) {
         setMobileModeEnabled(false);
     }
+    var parent = document.getElementById("experience_tiles");
+    setChildMarginsToFit(parent, "hover_image_wrapper", 10);
+}
+
+/* sets the margins of the children of parent with class childClass so 
+   that the maximum number of the children fit on a line while still 
+   having at least the minimumMargin. All children must have uniform
+   width. */
+function setChildMarginsToFit(parent, childClass, minimumMargin) {
+    var targetChildren = parent.getElementsByClassName(childClass);
+    if (targetChildren == null) {
+        return;
+    }
+    
+    var firstChild = targetChildren[0];
+    var childWidth = firstChild.offsetWidth;
+    var availableWidth = parseFloat(window.getComputedStyle(parent).width);
+    /* not 100% accurate, but good enough. We are adding the minimum
+       margin to each child, but ignoring the margin between the last
+       child and the end of the parent */
+    var childrenPerLine = Math.floor(availableWidth / (childWidth + minimumMargin));
+    var noMarginLineWidth = childrenPerLine * childWidth;
+    var totalMargin = availableWidth - noMarginLineWidth - 20;
+    var lineCount = Math.ceil(targetChildren.length / childrenPerLine);
+    var margin = (totalMargin / (childrenPerLine)) / 2;
+    for (var i = 0; i < targetChildren.length; ++i) {
+        targetChildren[i].style.marginLeft = margin + "px";
+        targetChildren[i].style.marginRight = margin + "px";
+        if ((i + 1) % childrenPerLine == 0) {
+            /* Sometimes rounding errors cause the last element
+                in a line to wrap around, so we set the margin to 0 to account for these errors, ensuring
+                it is on the correct line */
+            targetChildren[i].style.marginRight = "0px";
+        }
+    }
 }
 
 function setMobileModeEnabled(enabled) {

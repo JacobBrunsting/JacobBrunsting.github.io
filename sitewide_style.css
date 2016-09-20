@@ -2,6 +2,51 @@
     http://paletton.com/#uid=62T0E0keqNw3ZZz9uUEiKEmmBvn 
 */
 
+/* General */
+
+html {
+    overflow: -moz-scrollbars-vertical; 
+    overflow-y: scroll;
+}
+
+body {
+    margin: 0px;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    background-color: rgb(240, 240, 240);
+}
+
+div.main {
+    background-color: rgb(255, 255, 255);
+    color: rgb(80, 80, 80);
+    max-width: 1200px;
+    padding: 2% 2% 2% 2%;
+    margin: auto;
+    margin-bottom: 100px;
+    margin-top: 2%;
+}
+
+div.section {
+    padding: 2%;
+    border-radius: 2px;
+    border-style: solid;
+    border-width: 5px;
+    font-size: 125%;
+    background-color: rgb(245, 245, 245);
+    border-color: rgb(200, 200, 200);
+}
+
+img {
+    margin: 2%;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(86, 145, 191);
+}
+
+/* Navbar */
+
 .navbar {
     list-style-type: none;
     display: block;
@@ -9,7 +54,7 @@
     width: 100%;
     background-color: aqua;
     border-bottom-style: solid;
-    /* The outline width will be animated larger 
+    /* The border width will be animated larger 
        when the user scrolls */
     border-bottom-width: 0px;
     border-bottom-color: rgb(255, 120, 106);
@@ -21,9 +66,6 @@
     padding-left: 10px;
     z-index: 10;
     height: 40px;
-    /* The top and margin will likely be animated
-       to 0 after the user scrolls down a certain
-       distance */
     margin-top: 10px;
     font-size: 20px;
 }
@@ -37,26 +79,24 @@
 
 .navbar > li.name_header {
     float: left;
-    margin: 5px;
-    margin-top: 2px;
     font-size: 200%;
     font-variant: small-caps;
     font-weight: 900;
+    height: 40px;
 }
 
 .navbar > li:nth-child(2) {
-    margin-right: 40px;
+    margin-right: 20px;
 }
 
 .navbar > li:first-child {
     /* The opacity will be increased after scrolling */
-    color: rgb(80, 80, 80);
     opacity: 0;
 }
 
 .navbar > li > a {
-    display: block;
     color: rgb(80, 80, 80);
+    display: block;
     background-color: rgba(200, 200, 200);
     text-decoration: none;
     padding-left: 10px;
@@ -67,9 +107,21 @@
     align-content: center;
 }
 
+.navbar > li.selected > a {
+    background: rgb(255, 120, 106);
+}
+
 .navbar > li > a:hover {
     color: rgb(200, 200, 200);
     background-color: rgb(150, 150, 150);
+}
+
+/* Banner */
+
+div.banner {
+    height: 225px;
+    width: 500px;
+    overflow: hidden;
 }
 
 .first_name {
@@ -92,71 +144,17 @@
     line-height: 70px;
 }
 
-.navbar > li.selected > a {
-    background: rgb(255, 120, 106);
-    color: rgb(80, 80, 80);
-}
-
-div.banner {
-    margin-top: -20px;
-    margin-right: -20px;
-    margin-left: -20px;
-    height: 225px;
-    width: 500px;
-    overflow: hidden;
-}
-
 div.banner > img {
     position: fixed;
-    width: 100%;
+    width: 110%;
     min-width: 1000px;
     margin-top: -230px;
+    margin-left: 0px;
     z-index: -1;
     clip: rect(0px, auto, 230px, 0px);
 }
 
-div.main {
-    background-color: rgb(255, 255, 255);
-    color: rgb(80, 80, 80);
-    max-width: 1200px;
-    padding-left: 4%;
-    padding-right: 4%;
-    padding-bottom: 4%;
-    padding-top: 2%;
-    margin: auto;
-    margin-bottom: 100px;
-    margin-top: 2%;
-}
-
-div.section {
-    padding: 2%;
-    border-radius: 2px;
-    border-style: solid;
-    border-width: 5px;
-    font-size: 125%;
-    background-color: rgb(245, 245, 245);
-    border-color: rgb(200, 200, 200);
-}
-
-img {
-    margin: 2%;
-}
-
-body {
-    font-family: "Roboto", sans-serif;
-    font-size: 18px;
-    background-color: rgb(240, 240, 240);
-}
-
-html {
-    overflow: -moz-scrollbars-vertical; 
-    overflow-y: scroll;
-}
-
-a {
-    text-decoration: none;
-    color: rgb(86, 145, 191);
-}
+/* Mobile Overrides */
 
 @media all and (max-width: 800px) , all and (max-device-width: 800px) {
     div.banner {
@@ -169,11 +167,6 @@ a {
         margin-top: 0px;
     }
     
-    .navbar > li > a {
-        height: 48px;
-        font-size: 40px;
-    }
-    
     .navbar {
         border-width: 2px;
         background-color: rgb(200, 200, 200);
@@ -183,6 +176,11 @@ a {
         margin: 0px;
         position: relative;
         padding: 0px;
+    }
+    
+    .navbar > li > a {
+        height: 48px;
+        font-size: 40px;
     }
     
     .navbar > li {
