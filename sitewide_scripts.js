@@ -97,16 +97,19 @@ function setChildMarginsToFit(parent, childClass, minimumMargin) {
     var noMarginLineWidth = childrenPerLine * childWidth;
     var totalMargin = availableWidth - noMarginLineWidth - 20;
     var lineCount = Math.ceil(targetChildren.length / childrenPerLine);
-    var margin = (totalMargin / (childrenPerLine)) / 2;
+    var margin = ((totalMargin / (childrenPerLine + 1)) / 2) + "px";
     for (var i = 0; i < targetChildren.length; ++i) {
-        targetChildren[i].style.marginLeft = margin + "px";
-        targetChildren[i].style.marginRight = margin + "px";
         if ((i + 1) % childrenPerLine == 0) {
             /* Sometimes rounding errors cause the last element
-                in a line to wrap around, so we set the margin to 0 to account for these errors, ensuring
+                in a line to wrap around, so we set the margin to -10 to account for these errors, ensuring
                 it is on the correct line */
-            targetChildren[i].style.marginRight = "0px";
+            targetChildren[i].style.marginRight = "-10px";
+        } else {
+            targetChildren[i].style.marginRight = margin;
         }
+        targetChildren[i].style.marginLeft = margin;
+        targetChildren[i].style.martinTop = margin;
+        targetChildren[i].style.marginBottom = margin;
     }
 }
 
