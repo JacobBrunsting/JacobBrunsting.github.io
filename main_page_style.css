@@ -6,6 +6,11 @@ div.section {
     -webkit-column-break-inside: avoid;
 }
 
+p {
+    margin: 0px;
+}
+
+
 div.section_wrapper {
     padding-top: 20px;
 }
@@ -40,18 +45,22 @@ div.hover_image_wrapper {
     vertical-align: top;
 }
 
-div.hover_image_wrapper:hover > p.hover_text {
+div.hover_image_wrapper:hover > p.hover_text,
+div.hover_image_wrapper:hover > img.fade_out_overlay,
+div.hover_image_wrapper:hover > a {
     visibility: visible;
 }
 
 p.hover_text {
     padding: 5%;
+    padding-bottom: 0px;
     background-color: rgba(255, 255, 255, 0.9);
-    font-size: 14px;
+    font-size: 70%;
     position: absolute;
     display: block;
+    overflow: hidden;
     width: 90%;
-    height: 90%;
+    height: 95%;
     top: 0;
     left: 0;
     z-index: 3;
@@ -60,10 +69,29 @@ p.hover_text {
     cursor: default;
 }
 
-p {
-    margin: 0px;
+div.hover_image_wrapper > a {
+    visibility: hidden;
+    padding-bottom: 2%;
+    z-index: 12;
+    font-size: 18px;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    bottom: 0px;
+    width: 90%;
+    height: 22px;
+    text-align: center;
 }
 
+img.fade_out_overlay {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    z-index: 10;
+    margin: 0px;
+    visibility: hidden;
+}
 .section_header, .subtitle {
     margin: 0px;
     margin-bottom: 10px;
@@ -109,7 +137,7 @@ p {
     /* the links are hard to click on mobile, and can be triggered by clicking
        the image in the place the link appears after clicking a hover image,
        so we disable them. */
-    p.hover_text > a {
+    div.hover_image_wrapper:hover > a {
         display: none;
     }
 }
