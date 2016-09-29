@@ -36,6 +36,18 @@ div.section {
     border-color: rgb(200, 200, 200);
 }
 
+.section_header, .subtitle {
+    margin: 0px;
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: rgb(120, 120, 120);
+    display: block;
+}
+
 img {
     margin: 2%;
 }

@@ -92,17 +92,6 @@ img.fade_out_overlay {
     margin: 0px;
     visibility: hidden;
 }
-.section_header, .subtitle {
-    margin: 0px;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    margin-top: 5px;
-    font-size: 16px;
-    color: rgb(120, 120, 120);
-    display: block;
-}
 
 .simple_list {
     font-size: 24px;

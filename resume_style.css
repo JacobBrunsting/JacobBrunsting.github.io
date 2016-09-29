@@ -1,12 +1,7 @@
 @import url("sitewide_style.css");
 
 div.section {
-    margin-top: 20px;
     margin-bottom: 20px;
-    padding: 40px;
-    padding-bottom: 20px;
-    break-inside: avoid;
-    display: inline-block;
 }
 
 div.tiled_view_wrapper {
@@ -29,7 +24,6 @@ p {
     margin: 0px;
 }
 
-.section_header {
-    margin: 0px;
-    margin-bottom: 20px;
+ul {
+    margin-top: 15px;
 }
