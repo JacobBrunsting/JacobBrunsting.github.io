@@ -25,5 +25,7 @@ p {
 }
 
 ul {
-    margin-top: 15px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    list-style-type: circle;
 }

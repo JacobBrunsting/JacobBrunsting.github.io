@@ -8,7 +8,7 @@ div.section {
 
 img.work_logo, img.project_logo, img.award_logo {
     float: left;
-    width: 200px;
+    width: 190px;
     margin-top: 0px;
     margin-left: 0px;
 }
@@ -28,7 +28,7 @@ img.project_logo {
 
 .work_title, .award_title, .project_title, .programming_language {
     margin-top: 0px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 p {
