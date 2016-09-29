@@ -2,8 +2,13 @@
 
 div.section {
     margin-top: 20px;
+    margin-bottom: 20px;
     break-inside: avoid;
     overflow: hidden;
+}
+
+div.section:last-child {
+    margin-bottom: 0px;
 }
 
 img.work_logo, img.project_logo, img.award_logo {
@@ -21,7 +26,6 @@ img.project_logo {
 
 .section_title {
     margin: 0px;
-    padding-top: 20px;
     padding-bottom: 0px;
     font-size: 30px;
 }
