@@ -3,7 +3,6 @@
 
 table {
     width: 100%;
-    margin-bottom: 10px;
 }
 
 div.section.first {
@@ -18,7 +17,6 @@ div.section.first {
 }
 
 div.main {
-    background-color: transparent;
     overflow-x: hidden;
 }
 

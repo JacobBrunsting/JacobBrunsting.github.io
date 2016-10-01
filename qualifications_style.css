@@ -1,7 +1,7 @@
 @import url("sitewide_style.css");
 
 div.section {
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 20px;
     break-inside: avoid;
     overflow: hidden;
@@ -43,4 +43,8 @@ p {
 .subheading {
     position: relative;
     font-size: 20px;
+}
+
+div.main {
+    padding-top: 30px;
 }

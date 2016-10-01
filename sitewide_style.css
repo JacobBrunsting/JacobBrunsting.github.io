@@ -96,6 +96,7 @@ a {
     font-variant: small-caps;
     font-weight: 900;
     height: 40px;
+    color: rgb(80, 80, 80);
 }
 
 .navbar > li:nth-child(2) {
@@ -110,7 +111,7 @@ a {
 .navbar > li > a {
     color: rgb(80, 80, 80);
     display: block;
-    background-color: rgba(200, 200, 200);
+    background-color: rgba(200, 200, 200, 0.8);
     text-decoration: none;
     padding-left: 10px;
     padding-right: 10px;
@@ -133,9 +134,10 @@ a {
 /* Banner */
 
 div.banner {
-    height: 225px;
-    width: 500px;
+    height: 220px;
+    width: 440px;
     overflow: hidden;
+    background-color: rgba(200, 200, 200, 0.8);
 }
 
 .first_name {
@@ -159,6 +161,7 @@ div.banner {
 }
 
 div.banner > img {
+    right: -40px;
     position: fixed;
     width: 110%;
     min-width: 1000px;

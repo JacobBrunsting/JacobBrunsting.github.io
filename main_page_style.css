@@ -25,14 +25,14 @@ div.tiled_view_wrapper > div.section:first-child {
 }
 
 img.profile_image {
-    width: 35%;
+    width: 25%;
     float: left;
     margin-left: 0px;
     margin-top: 0px;
 }
 
 img.qualifications_logo {
-    width: 100%;
+    width: 95%;
     vertical-align: top;
 }
 

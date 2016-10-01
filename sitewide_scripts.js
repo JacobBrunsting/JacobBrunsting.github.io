@@ -82,6 +82,9 @@ function onWindowResize() {
    having at least the minimumMargin. All children must have uniform
    width. */
 function setChildMarginsToFit(parent, childClass, minimumMargin) {
+    if (parent == null) {
+        return;
+    }
     var targetChildren = parent.getElementsByClassName(childClass);
     if (targetChildren == null) {
         return;
