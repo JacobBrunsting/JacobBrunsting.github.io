@@ -1,7 +1,7 @@
 @import url("sitewide_style.css");
-
 div.section {
-    overflow: hidden; /* fix for Firefox */
+    overflow: hidden;
+    /* fix for Firefox */
     break-inside: avoid-column;
     -webkit-column-break-inside: avoid;
 }
@@ -9,7 +9,6 @@ div.section {
 p {
     margin: 0px;
 }
-
 
 div.section_wrapper {
     padding-top: 20px;
@@ -54,7 +53,7 @@ p.hover_text {
     padding: 5%;
     padding-bottom: 0px;
     background-color: rgba(255, 255, 255, 0.9);
-    font-size: 70%;
+    font-size: 100%;
     position: absolute;
     display: block;
     overflow: hidden;
@@ -102,26 +101,23 @@ img.fade_out_overlay {
     margin-bottom: 10px;
 }
 
-@media all and (max-width: 800px) , all and (max-device-width: 800px) {
+@media all and (max-width: 800px),
+all and (max-device-width: 800px) {
     div.hover_image_wrapper {
         width: 42%;
     }
-    
     p.hover_text {
         /* when a mobile user clicks on the hover image, it is treated as a
            hover, but the text below where the user clicked is selected, so we
            disable text selection on mobile devices as a quick fix */
         user-select: none;
     }
-    
     div.hover_image_wrapper:hover > p.hover_text {
         font-size: 16px;
     }
-    
     .desktop_specific {
         display: none;
     }
-    
     /* the links are hard to click on mobile, and can be triggered by clicking
        the image in the place the link appears after clicking a hover image,
        so we disable them. */
@@ -130,7 +126,8 @@ img.fade_out_overlay {
     }
 }
 
-@media not all and (max-width: 800px) , all and (max-device-width: 800px) {
+@media not all and (max-width: 800px),
+all and (max-device-width: 800px) {
     .mobile_specific {
         display: none;
     }
