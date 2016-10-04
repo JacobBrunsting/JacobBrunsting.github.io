@@ -101,6 +101,14 @@ img.fade_out_overlay {
     margin-bottom: 10px;
 }
 
+.subtitle {
+    display: block;
+}
+
+.mobile_specific {
+    display: none;
+}
+
 @media all and (max-width: 800px),
 all and (max-device-width: 800px) {
     div.hover_image_wrapper {
@@ -118,17 +126,13 @@ all and (max-device-width: 800px) {
     .desktop_specific {
         display: none;
     }
+    .subtitle.mobile_specific {
+        display: block;
+    }
     /* the links are hard to click on mobile, and can be triggered by clicking
        the image in the place the link appears after clicking a hover image,
        so we disable them. */
     div.hover_image_wrapper:hover > a {
-        display: none;
-    }
-}
-
-@media not all and (max-width: 800px),
-all and (max-device-width: 800px) {
-    .mobile_specific {
         display: none;
     }
 }
