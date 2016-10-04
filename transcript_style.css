@@ -1,6 +1,5 @@
 @import url("sitewide_style.css");
 @import url("table_style.css");
-
 table {
     width: 100%;
 }
@@ -20,35 +19,29 @@ div.main {
     overflow-x: hidden;
 }
 
-html, body {
+html,
+body {
     width: 100%;
     align-content: center;
     overflow-x: hidden;
 }
 
-@media all and (max-width: 800px) , all and (max-device-width: 800px) {  
-    table {
-        font-size: 30px;
-    }
-    
+@media all and (max-width: 800px),
+all and (max-device-width: 800px) {
     div.main {
         padding: 0px;
     }
-    
     div.section.first {
         border-style: hidden;
     }
-    
     th {
         break-inside: avoid;
         white-space: nowrap;
         overflow: hidden;
     }
-    
     div.cell_wrapper {
         display: inline-block;
     }
-    
     div.arrows {
         display: inline-block;
     }

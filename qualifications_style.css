@@ -1,5 +1,4 @@
 @import url("sitewide_style.css");
-
 div.section {
     margin-top: 10px;
     margin-bottom: 20px;
@@ -11,7 +10,9 @@ div.section:last-child {
     margin-bottom: 0px;
 }
 
-img.work_logo, img.project_logo, img.award_logo {
+img.work_logo,
+img.project_logo,
+img.award_logo {
     float: left;
     width: 190px;
     margin-top: 0px;
@@ -27,10 +28,13 @@ img.project_logo {
 .section_title {
     margin: 0px;
     padding-bottom: 0px;
-    font-size: 30px;
+    font-size: 1.35em;
 }
 
-.work_title, .award_title, .project_title, .programming_language {
+.work_title,
+.award_title,
+.project_title,
+.programming_language {
     margin-top: 0px;
     margin-bottom: 0px;
 }
@@ -38,11 +42,6 @@ img.project_logo {
 p {
     margin: 0px;
     margin-bottom: 10px;
-}
-
-.subheading {
-    position: relative;
-    font-size: 20px;
 }
 
 div.main {

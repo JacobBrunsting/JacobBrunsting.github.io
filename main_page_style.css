@@ -53,7 +53,7 @@ p.hover_text {
     padding: 5%;
     padding-bottom: 0px;
     background-color: rgba(255, 255, 255, 0.9);
-    font-size: 100%;
+    font-size: 0.8em;
     position: absolute;
     display: block;
     overflow: hidden;
@@ -71,7 +71,7 @@ div.hover_image_wrapper > a {
     visibility: hidden;
     padding-bottom: 2%;
     z-index: 12;
-    font-size: 18px;
+    font-size: 0.8em;
     position: absolute;
     background-color: rgb(255, 255, 255);
     bottom: 0px;
@@ -92,7 +92,7 @@ img.fade_out_overlay {
 }
 
 .simple_list {
-    font-size: 24px;
+    font-size: 1.2em;
     display: block;
     margin-right: 5%;
     width: auto;
@@ -119,9 +119,6 @@ all and (max-device-width: 800px) {
            hover, but the text below where the user clicked is selected, so we
            disable text selection on mobile devices as a quick fix */
         user-select: none;
-    }
-    div.hover_image_wrapper:hover > p.hover_text {
-        font-size: 16px;
     }
     .desktop_specific {
         display: none;
