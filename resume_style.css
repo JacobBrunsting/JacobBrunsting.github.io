@@ -1,7 +1,10 @@
 @import url("sitewide_style.css");
-
 div.section {
-    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+div.section:first-child {
+    margin-top: 0px;
 }
 
 div.tiled_view_wrapper {
