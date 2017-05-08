@@ -8,7 +8,7 @@ function invertHeaderSorting(header, animate) {
         return;
     }
     currentlyAnimating = true;
-    var table = document.getElementById("transcript").children[0];
+    var table = document.getElementById("transcript_table").children[0];
     var rows = [];
     var rowHeights = [];
     const numLoops = table.children.length - 1;
@@ -101,6 +101,7 @@ function sum(list, firstIndex, lastIndex) {
 }
 
 function animatePosChange(yChange, element, onComplete) {
+    console.log("animating position change");
     var id = setInterval(animate, 16)
     var frameCount = Math.round(ROW_ANIMATION_DURATION / 16.0);
     var framesComplete = 0;
@@ -163,10 +164,10 @@ function reverseCellComparator(a, b) {
 
 function setupTableSorting() {
     var isMobile = false;
-    if (window.matchMedia("all and (max-width: 800px) , all and (max-device-width: 800px)").matches) {
+    if (window.matchMedia("(max-width: 780px), and (max-device-width: 780px)").matches) {
         isMobile = true;
     }
-    var headers = document.getElementsByTagName("th");
+    var headers = document.getElementsByClassName("transcript_header");
     for (var i = 0; i < headers.length; ++i) {
         const headerNum = i;
         headers[i].addEventListener("click", function () {
