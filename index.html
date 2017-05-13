@@ -120,13 +120,16 @@
 </p>
 <p class="description">
     My most recent (and largest) project is a social media website called 
-    OpenWindow. It is a location based website that allows you to make text
+    OpenWindow. The testing version of the site, with a very primative UI, is 
+    running <a href="http://debfe5a9.ngrok.io">here</a>. You can see the current
+    server setup <a href="http://debfe5a9.ngrok.io/#/serverinfo">here</a>. 
+    It is a location based website that allows you to make text
     posts, and see and comment on posts from people in your geographic region.
     It is set up in two layers with a load balancer - one layer to server
     up the website and direct traffic, and another to manage the storage and
     backup of the posts. The layers are horizontally scalable, and any server
     failure is automatically detected and recovered from without any loss of
-    data, in ~30 seconds. It is not currently live, but you can see the code 
+    data, in ~30 seconds. You can see the code 
     <a href="https://github.com/JacobBrunsting/openwindow">here</a>. It is
     written in Node.js with MongoDB as the database, and with an Angular 1 
     frontend (although the front end is a bit neglected).

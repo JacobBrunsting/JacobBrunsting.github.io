@@ -101,7 +101,6 @@ function sum(list, firstIndex, lastIndex) {
 }
 
 function animatePosChange(yChange, element, onComplete) {
-    console.log("animating position change");
     var id = setInterval(animate, 16)
     var frameCount = Math.round(ROW_ANIMATION_DURATION / 16.0);
     var framesComplete = 0;
