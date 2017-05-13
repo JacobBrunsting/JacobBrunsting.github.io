@@ -210,7 +210,7 @@ div.arrows.sorted_up > p.bottom_arrow {
     color: #222222;
 }
 
-@media (max-width: 780px) {
+@media (max-width: 850px) {
     body {
         padding: 20px;
     }
