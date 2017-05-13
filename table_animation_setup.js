@@ -163,7 +163,7 @@ function reverseCellComparator(a, b) {
 
 function setupTableSorting() {
     var isMobile = false;
-    if (window.matchMedia("(max-width: 780px), and (max-device-width: 780px)").matches) {
+    if (window.matchMedia("(max-width: 850px), and (max-device-width: 850px)").matches) {
         isMobile = true;
     }
     var headers = document.getElementsByClassName("transcript_header");
