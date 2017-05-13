@@ -175,4 +175,4 @@ function setupTableSorting() {
     }
 }
 setupTableSorting();
-invertHeaderSorting(0, false);
+invertHeaderSorting(2, false);
